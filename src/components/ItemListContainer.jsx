@@ -1,19 +1,25 @@
-import ItemList from "./ItemList";
-import { useEffect, useState } from "react";
-import { getProducts } from "../services/firebase/firestore";
+import ItemList from './ItemList'
+import { useState, useEffect } from 'react'
+import { useParams } from 'react-router'
+import { getProducts, getProductsByCategory } from '../firebase/db'
 
 function ItemListContainer() {
-    const [products, setProducts] = useState([]);
+    const [items, setItems] = useState([])
+    const { categoryName } = useParams()
 
     useEffect(() => {
-        getProducts().then((products) => {
-            setProducts(products);
-        });
-    }, []);
+        if (categoryName) {
+            getProductsByCategory(categoryName)
+                .then(prods => setItems(prods))
+        } else {
+            getProducts()
+                .then(prods => setItems(prods))
+        }
+    }, [categoryName])
 
     return (
-    
-    );
+        <ItemList items={items} />
+    )
 }
 
-export default ItemListContainer;
+export default ItemListContainer

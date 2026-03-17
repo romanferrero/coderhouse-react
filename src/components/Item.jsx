@@ -1,6 +1,8 @@
-
+import { useNavigate } from "react-router"
 
 function Item({ prod }) {
+    const navigate = useNavigate()
+
     return (
         <div className="card border bg-zinc-950">
             <figure>
@@ -14,6 +16,7 @@ function Item({ prod }) {
                 <div className="card-actions justify-end">
                     <button
                         className="btn btn-primary"
+                        onClick={() => navigate(`/product/${prod.id}`)}
                     >
                         Ver más
                     </button>
