@@ -1,11 +1,10 @@
-import Button from './components/Button'
-import Navbar from './components/Navbar'
+import AppRouter from './router/AppRouter'
 
 function App() {
 
   return (
       <div>
-        <Navbar></Navbar>
+        <AppRouter />
       </div>
   )
 }
