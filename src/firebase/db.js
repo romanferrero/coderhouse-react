@@ -3,7 +3,9 @@ import {
     collection,
     getDocs,
     query,
-    where
+    where,
+    doc,
+    getDoc
 }
     from "firebase/firestore"
 
@@ -43,4 +45,16 @@ export const getProductsByCategory = async (category) => {
     })
 
     return products
+}
+
+export const getDetail = async (id) => {
+  const docRef = doc(db, "products", id)
+  const docSnap = await getDoc(docRef)
+  
+  if (docSnap.exists()) {
+    return {...docSnap.data(), id: docSnap.id}
+  } else {
+    // docSnap.data() will be undefined in this case
+    console.log("No such document!")
+  }
 }
