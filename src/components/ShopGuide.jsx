@@ -6,15 +6,17 @@ function ShopGuide() {
             <p className="mb-4">
                 En esta guía encontrarás información sobre los diferentes tipos de tablas de surf, sus características y para qué tipo de surfistas son más adecuadas.
             </p>
-            <h2 className="text-2xl font-semibold mb-3">Tipos de Tablas de Surf</h2>
-            <ul className="list-disc list-inside mb-4">
-                <li><strong>Shortboard:</strong> Ideal para surfistas avanzados que buscan maniobrabilidad y velocidad en olas grandes.</li>
-                <li><strong>Longboard:</strong> Perfecta para principiantes y surfistas que disfrutan de un estilo más relajado y fluido en olas pequeñas a medianas.</li>
-                <li><strong>Fish:</strong> Tabla corta y ancha, excelente para olas pequeñas y medianas, proporcionando estabilidad y facilidad de remada.</li>
-                <li><strong>Funboard:</strong> Combina características de shortboard y longboard, ideal para surfistas intermedios que buscan versatilidad.</li>
-                <li><strong>Gun:</strong> Diseñada para olas grandes y rápidas, con una forma estrecha y puntiaguda para mayor control.</li>
-            </ul>
-            <h2 className="text-2xl font-semibold mb-3">Materiales de las Tablas de Surf</h2>
+            <h2 className="text-2xl font-semibold mb-3">¿Cómo elegir tú tabla ideal?</h2>
+            <h3 className="text-2xl font-semibold mb-3">
+                ¿Cuáles son las partes de la tabla y para qué sirven?
+            </h3>
+            <p>
+                Si nos metemos un poco más en la física de las tablas, vemos que hay un montón de modelos pensados para distintos tipos 
+                de olas. Cada tabla tiene sus propias características, que hacen que funcione mejor en ciertas condiciones que en otras. 
+                Por eso, la idea es repasar cuáles son los aspectos más importantes que influyen en el rendimiento de una tabla y entender 
+                por qué algunas rinden mejor dependiendo de la ola que te toque.
+            </p>
+            <h4 className="text-2xl font-semibold mb-3">¿Qué es el volumen?</h4>
             <p className="mb-4">
                 Las tablas de surf pueden estar hechas de diferentes materiales, cada uno con sus propias ventajas y desventajas:
             </p>
@@ -28,8 +30,8 @@ function ShopGuide() {
                 Al elegir una tabla de surf, considera tu nivel de habilidad, el tipo de olas que planeas surfear y tus preferencias personales. Es recomendable consultar con expertos en tiendas de surf para obtener recomendaciones personalizadas.
             </p>
         </div>
-        
-    )    
+
+    )
 }
 
 export default ShopGuide;
