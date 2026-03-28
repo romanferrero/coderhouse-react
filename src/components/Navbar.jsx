@@ -1,9 +1,31 @@
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import logoImg from '../assets/logo-rs.png'
 
 function Navbar({ categories }) {
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 12)
+    }
+
+    handleScroll()
+    window.addEventListener('scroll', handleScroll, { passive: true })
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
   return (
-    <div className="navbar sticky top-0 z-50 bg-base-100/90 backdrop-blur-md border-b border-base-300 px-4 md:px-8 shadow-md">
+    <div
+      className={`navbar sticky top-0 z-50 border-b border-base-300 px-4 md:px-8 transition-all duration-300 ${
+        isScrolled
+          ? 'bg-base-100/85 backdrop-blur-md shadow-md'
+          : 'bg-base-100 backdrop-blur-0 shadow-sm'
+      }`}
+    >
       
       <div className="navbar-start">
         <Link

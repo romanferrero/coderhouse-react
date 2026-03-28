@@ -10,7 +10,7 @@ function Hero() {
         className="w-full h-full object-cover blur-sm scale-110"
       />
 
-      <div className="absolute inset-0 bg-black/40"></div>
+      <div className="absolute inset-0 bg-black/25"></div>
 
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4">
         <h1 className="text-4xl md:text-5xl font-extrabold tracking-wide mb-2">
