@@ -1,4 +1,14 @@
+import { useState } from 'react'
+import { useCart } from '../context/CartContext'
+
 function ItemDetail({ item }) {
+  const [quantity, setQuantity] = useState(1)
+  const { addToCart } = useCart()
+
+  const handleAddToCart = () => {
+    addToCart(item, quantity)
+  }
+
   return (
     <div className="max-w-6xl mx-auto px-6 py-10">
       <div className="flex flex-col lg:flex-row gap-10">
@@ -28,9 +38,27 @@ function ItemDetail({ item }) {
             </div>
           </div>
 
-          <div className="mt-8 flex gap-4">
-            <button className="btn btn-primary rounded-full px-8">
-              Comprar
+          <div className="mt-8 flex flex-wrap items-center gap-3">
+            <div className="join">
+              <button
+                className="btn join-item btn-outline"
+                onClick={() => setQuantity((prev) => Math.max(1, prev - 1))}
+              >
+                -
+              </button>
+              <span className="btn join-item btn-ghost pointer-events-none">
+                {quantity}
+              </span>
+              <button
+                className="btn join-item btn-outline"
+                onClick={() => setQuantity((prev) => prev + 1)}
+              >
+                +
+              </button>
+            </div>
+
+            <button className="btn btn-primary rounded-full px-8" onClick={handleAddToCart}>
+              Agregar al carrito
             </button>
 
           </div>

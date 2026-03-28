@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import logoImg from '../assets/logo-rs.png'
+import CartWidget from './CartWidget'
 
 function Navbar({ categories }) {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -47,7 +48,10 @@ function Navbar({ categories }) {
       </div>
 
       <div className="navbar-end">
-        <div className="dropdown dropdown-end">
+        <div className="flex items-center gap-2">
+          <CartWidget />
+
+          <div className="dropdown dropdown-end">
           <div
             tabIndex={0}
             role="button"
@@ -71,6 +75,7 @@ function Navbar({ categories }) {
               </li>
             ))}
           </ul>
+          </div>
         </div>
       </div>
 

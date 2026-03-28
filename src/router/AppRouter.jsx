@@ -1,9 +1,10 @@
-import { BrowserRouter, Routes, Route } from "react-router"
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import ItemListContainer from '../components/ItemListContainer'
 import NavbarContainer from '../components/NavbarContainer'
 import ShopGuide from '../components/ShopGuide'
 import ItemDetailContainer from '../components/ItemDetailContainer'
 import Footer from '../components/Footer'
+import Cart from '../components/Cart'
 
 
 
@@ -18,6 +19,7 @@ function AppRouter () {
             <Route path="/category/:categoryName" element={<ItemListContainer />} />
             <Route path="/product/:id" element={<ItemDetailContainer />} />
             <Route path="/shop-guide" element={<ShopGuide />} />
+            <Route path="/cart" element={<Cart />} />
           </Routes>
         </main>
         <Footer />
