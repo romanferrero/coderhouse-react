@@ -7,7 +7,21 @@ body,
 	min-height: 100%;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	background: linear-gradient(180deg, #f8fbff 0%, #eef5ff 100%);
 	color: #1f2937;
+}
+
+.app-shell {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+.app-main {
+	flex: 1;
 }

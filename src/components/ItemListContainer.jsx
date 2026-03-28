@@ -1,5 +1,5 @@
 import ItemList from './ItemList'
-import Hero from './Hero'
+import HomeHero from './HomeHero'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router'
 import { getProducts, getProductsByCategory } from '../firebase/db'
@@ -20,8 +20,10 @@ function ItemListContainer() {
 
     return (
         <>
-        <Hero />
-        <ItemList items={items} />
+        {!categoryName && <HomeHero />}
+        <section id="catalogo" className="pt-8 pb-10">
+            <ItemList items={items} />
+        </section>
         </>
     )
 }
