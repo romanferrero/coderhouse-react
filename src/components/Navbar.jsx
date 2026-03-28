@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import logoImg from '../assets/logo-rs.png'
 
 function Navbar({ categories }) {
   return (
@@ -13,12 +14,13 @@ function Navbar({ categories }) {
         </Link>
       </div>
 
-      <div className="navbar-center">
-        <Link
-          to="/"
-          className="text-2xl md:text-3xl font-bold tracking-wide text-primary hover:scale-105 transition-transform duration-200"
-        >
-          Wave Surf
+      <div className='navbar-center'>
+        <Link to="/">
+          <img
+            src={logoImg}
+            alt="Ruta del Surf Logo"
+            className="w-10 h-10 md:w-12 md:h-12 object-contain transition-transform duration-200 hover:scale-110"
+          />
         </Link>
       </div>
 

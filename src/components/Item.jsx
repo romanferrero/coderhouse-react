@@ -21,12 +21,12 @@ function Item({ prod }) {
       </figure>
 
       <div className="card-body">
-        <h2 className="card-title text-base-content text-lg min-h-[3.5rem]">
+        <h2 className="card-title text-base-content text-lg min-h-14">
           {prod.title}
         </h2>
 
         <p
-          className="text-sm text-base-content/70 min-h-[4.5rem]"
+          className="text-sm text-base-content/70 min-h-18"
           title={fullDescription}
         >
           {shortDescription}

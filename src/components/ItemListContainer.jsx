@@ -1,4 +1,5 @@
 import ItemList from './ItemList'
+import Hero from './Hero'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router'
 import { getProducts, getProductsByCategory } from '../firebase/db'
@@ -18,7 +19,10 @@ function ItemListContainer() {
     }, [categoryName])
 
     return (
+        <>
+        <Hero />
         <ItemList items={items} />
+        </>
     )
 }
 
