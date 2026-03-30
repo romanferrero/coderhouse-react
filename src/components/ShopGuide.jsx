@@ -19,9 +19,6 @@ function ShopGuide() {
 
             <section className="mt-10 rounded-2xl border border-base-300 bg-base-100 p-6 shadow-sm md:p-8">
                 <h2 className="text-2xl font-bold md:text-3xl">Proceso recomendado</h2>
-                <p className="mt-2 text-sm opacity-80 md:text-base">
-                    Este orden evita el error mas comun: elegir por estilo antes que por flotacion.
-                </p>
 
                 <ul className="steps steps-vertical mt-6 w-full lg:steps-horizontal">
                     <li className="step step-primary">Perfil real</li>

@@ -22,6 +22,9 @@ function Footer() {
           <section>
             <h4 className="text-sm font-semibold uppercase tracking-[0.18em] opacity-70">Navegacion</h4>
             <nav className="mt-4 flex flex-col gap-2 text-sm">
+              <Link onClick={handleGoTop} className="link link-hover w-fit">
+                Inicio
+              </Link>
               <Link to="/shop-guide" className="link link-hover w-fit">
                 Guia de tablas
               </Link>
@@ -29,12 +32,6 @@ function Footer() {
                 Carrito
               </Link>
             </nav>
-            <button
-              onClick={handleGoTop}
-              className="btn btn-sm btn-primary mt-5 rounded-full"
-            >
-              Volver arriba
-            </button>
           </section>
         </div>
 
