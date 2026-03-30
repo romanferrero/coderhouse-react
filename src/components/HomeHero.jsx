@@ -4,8 +4,8 @@ import surfHeroImage from '../assets/surf.jpg'
 function HomeHero() {
   return (
     <Hero
-      title="Ruta del Surf"
-      subtitle="Encontra tu tabla ideal"
+      title="Encontrá tu tabla ideal"
+      subtitle="Calidad, diseño y rendimiento en cada tabla"
       image={surfHeroImage}
       imageAlt="Wave Surf"
       showButton={true}

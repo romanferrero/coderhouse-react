@@ -5,12 +5,14 @@ import ShopGuide from '../components/ShopGuide'
 import ItemDetailContainer from '../components/ItemDetailContainer'
 import Footer from '../components/Footer'
 import Cart from '../components/Cart'
+import ScrollToTop from '../components/ScrollToTop'
 
 
 
 function AppRouter () {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <div className="app-shell">
         <NavbarContainer />
         <main className="app-main">

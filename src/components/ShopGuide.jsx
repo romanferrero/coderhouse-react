@@ -218,10 +218,6 @@ function ShopGuide() {
                 </article>
             </section>
 
-            <p className="mt-6 text-xs opacity-70">
-                Referencia editorial: contenido adaptado e interpretado a partir de una guia publica de
-                medidas de tabla para crear una version resumida para esta tienda.
-            </p>
         </div>
     )
 }
