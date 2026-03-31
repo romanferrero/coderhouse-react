@@ -31,12 +31,53 @@ function Navbar({ categories }) {
     >
       <div className="navbar max-w-7xl mx-auto px-3 sm:px-4 md:px-8 min-h-16 md:min-h-20">
         <div className="navbar-start">
+          <div className="dropdown lg:hidden">
+            <div
+              tabIndex={0}
+              role="button"
+              className={`${navButtonClass} px-2.5`}
+              aria-label="Abrir menu"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="size-5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5m-16.5 5.25h16.5m-16.5 5.25h16.5" />
+              </svg>
+            </div>
+
+            <ul
+              tabIndex={0}
+              className="menu dropdown-content mt-3 w-72 rounded-2xl border border-base-300 bg-base-100 p-3 shadow-xl"
+            >
+              <li>
+                <Link to="/" className="rounded-lg">Inicio</Link>
+              </li>
+              <li>
+                <Link to="/cart" className="rounded-lg">Carrito</Link>
+              </li>
+              <li>
+                <Link to="/checkout" className="rounded-lg">Checkout</Link>
+              </li>
+
+              <li className="menu-title mt-2 px-2 text-xs uppercase tracking-[0.15em] opacity-70">
+                <span>Categorias</span>
+              </li>
+              {categories.map((cat) => (
+                <li key={cat}>
+                  <Link
+                    to={`/category/${cat}`}
+                    className="rounded-lg"
+                  >
+                    {cat}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
           <Link
             to="/shop-guide"
-            className={navButtonClass}
+            className={`hidden lg:inline-flex ${navButtonClass}`}
           >
-            <span className="hidden sm:inline">Guía de compra</span>
-            <span className="sm:hidden">Guía</span>
+            <span>Guía de compra</span>
           </Link>
         </div>
 
@@ -66,28 +107,19 @@ function Navbar({ categories }) {
               <CartWidget />
             </div>
 
-            <div className="dropdown dropdown-end">
+            <div className="dropdown dropdown-end hidden lg:block">
               <div
                 tabIndex={0}
                 role="button"
                 className={`${navButtonClass} cursor-pointer hover:bg-base-200 hover:shadow-sm active:scale-95`}
               >
-                <span className="hidden sm:inline">Categorías</span>
-                <span className="sm:hidden">Cat.</span>
+                <span>Categorías</span>
               </div>
 
               <ul
                 tabIndex={0}
                 className="dropdown-content menu mt-3 w-52 sm:w-60 rounded-xl bg-base-100 p-2 shadow-xl border border-base-300"
               >
-                <li className="sm:hidden">
-                  <Link
-                    to="/shop-guide"
-                    className="rounded-lg px-3 py-2 hover:bg-base-200 transition-colors duration-200"
-                  >
-                    Guía de compra
-                  </Link>
-                </li>
                 {categories.map((cat) => (
                   <li key={cat}>
                     <Link
