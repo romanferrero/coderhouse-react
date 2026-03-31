@@ -43,9 +43,9 @@ function ItemListContainer() {
         <>
         {!categoryName && <HomeHero />}
         {!categoryName && (
-            <section className="px-5 pt-8">
+            <section className="px-4 sm:px-5 lg:px-6 pt-8">
                 <div className="mx-auto max-w-5xl rounded-3xl border border-info/20 bg-base-100/80 p-5 shadow-sm backdrop-blur-sm md:p-6">
-                    <div className="grid grid-cols-1 gap-4 md:grid-cols-[2fr_1fr]">
+                    <div className="grid grid-cols-1 gap-4 lg:grid-cols-[2fr_1fr]">
                         <label className="form-control w-full">
                             <span className="label-text mb-2 font-medium">Buscar por nombre</span>
                             <input

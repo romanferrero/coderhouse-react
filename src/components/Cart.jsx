@@ -15,8 +15,8 @@ function Cart() {
   if (cartItems.length === 0) {
     return (
       <section className="mx-auto max-w-4xl px-4 py-12 md:px-8">
-        <div className="rounded-2xl border border-base-300 bg-base-100 p-8 text-center shadow-sm">
-          <h1 className="text-2xl font-bold">Tu carrito esta vacio</h1>
+        <div className="rounded-2xl border border-base-300 bg-base-100 p-6 sm:p-8 text-center shadow-sm">
+          <h1 className="text-xl sm:text-2xl font-bold">Tu carrito esta vacio</h1>
           <p className="mt-2 text-sm opacity-80">
             Explora el catalogo y agrega productos para comenzar tu compra.
           </p>
@@ -30,7 +30,7 @@ function Cart() {
 
   return (
     <section className="mx-auto max-w-6xl px-4 py-10 md:px-8">
-      <h1 className="text-3xl font-bold">Carrito de compras</h1>
+      <h1 className="text-2xl sm:text-3xl font-bold">Carrito de compras</h1>
 
       <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_20rem]">
         <div className="space-y-4">
@@ -44,10 +44,10 @@ function Cart() {
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="h-20 w-20 rounded-xl border border-base-300 object-contain p-1"
+                    className="h-16 w-16 sm:h-20 sm:w-20 rounded-xl border border-base-300 object-contain p-1"
                   />
                   <div>
-                    <h2 className="font-semibold">{item.title}</h2>
+                    <h2 className="font-semibold text-sm sm:text-base">{item.title}</h2>
                     <p className="text-sm opacity-75">${item.price} c/u</p>
                   </div>
                 </div>
@@ -84,7 +84,7 @@ function Cart() {
           ))}
         </div>
 
-        <aside className="h-fit rounded-2xl border border-base-300 bg-base-100 p-5 shadow-sm">
+        <aside className="h-fit rounded-2xl border border-base-300 bg-base-100 p-5 shadow-sm lg:sticky lg:top-24">
           <h2 className="text-xl font-bold">Resumen</h2>
           <div className="mt-4 space-y-2 text-sm">
             <p className="flex items-center justify-between">

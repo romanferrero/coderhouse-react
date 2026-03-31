@@ -10,24 +10,24 @@ function ItemDetail({ item }) {
   }
 
   return (
-    <div className="max-w-6xl mx-auto px-6 py-10">
-      <div className="flex flex-col lg:flex-row gap-10">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
+      <div className="flex flex-col lg:flex-row gap-6 sm:gap-10">
 
-        <div className="flex-1 bg-white rounded-2xl shadow-md border border-base-300 flex items-center justify-center p-6">
+        <div className="flex-1 bg-white rounded-2xl shadow-md border border-base-300 flex items-center justify-center p-4 sm:p-6">
           <img
             src={item.image}
             alt={item.title}
-            className="max-h-100 object-contain transition-transform duration-300 hover:scale-105"
+            className="max-h-72 sm:max-h-112 object-contain transition-transform duration-300 hover:scale-105"
           />
         </div>
 
         <div className="flex-1 flex flex-col justify-between">
           <div>
-            <h2 className="text-3xl font-bold mb-3">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-3">
               {item.title}
             </h2>
 
-            <p className="text-2xl font-extrabold text-primary mb-5">
+            <p className="text-xl sm:text-2xl font-extrabold text-primary mb-5">
               ${item.price}
             </p>
 
@@ -38,7 +38,7 @@ function ItemDetail({ item }) {
             </div>
           </div>
 
-          <div className="mt-8 flex flex-wrap items-center gap-3">
+          <div className="mt-8 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3">
             <div className="join">
               <button
                 className="btn join-item btn-outline"
@@ -57,7 +57,7 @@ function ItemDetail({ item }) {
               </button>
             </div>
 
-            <button className="btn btn-primary rounded-full px-8" onClick={handleAddToCart}>
+            <button className="btn btn-primary rounded-full px-6 sm:px-8 w-full sm:w-auto" onClick={handleAddToCart}>
               Agregar al carrito
             </button>
 
