@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/coderhouse-react/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ruta del Surf</title>
+    <script type="module" crossorigin src="/coderhouse-react/assets/index-Dglwcru5.js"></script>
+    <link rel="stylesheet" crossorigin href="/coderhouse-react/assets/index-2wPO6wEh.css">
+  </head>
+  <script>
+  var redirect = sessionStorage.redirect;
+  delete sessionStorage.redirect;
+  if (redirect && redirect !== location.href) {
+    history.replaceState(null, null, redirect);
+  }
+</script>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
