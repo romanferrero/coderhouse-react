@@ -53,9 +53,6 @@ function Navbar({ categories }) {
               <li>
                 <Link to="/cart" className="rounded-lg">Carrito</Link>
               </li>
-              <li>
-                <Link to="/checkout" className="rounded-lg">Checkout</Link>
-              </li>
 
               <li className="menu-title mt-2 px-2 text-xs uppercase tracking-[0.15em] opacity-70">
                 <span>Categorias</span>
