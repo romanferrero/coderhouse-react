@@ -27,7 +27,7 @@ function ItemDetail({ item }) {
               {item.title}
             </h2>
 
-            <p className="text-xl sm:text-2xl font-extrabold text-primary mb-5">
+            <p className="text-xl sm:text-2xl font-extrabold text-emerald-600 mb-5">
               ${item.price}
             </p>
 
@@ -57,7 +57,7 @@ function ItemDetail({ item }) {
               </button>
             </div>
 
-            <button className="btn btn-primary rounded-full px-6 sm:px-8 w-full sm:w-auto" onClick={handleAddToCart}>
+            <button className="btn rounded-full px-6 sm:px-8 w-full sm:w-auto border-0 bg-sky-700 text-white hover:bg-sky-800" onClick={handleAddToCart}>
               Agregar al carrito
             </button>
 

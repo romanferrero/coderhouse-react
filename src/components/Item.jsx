@@ -33,12 +33,12 @@ function Item({ prod }) {
         </p>
 
         <div className="card-actions justify-between items-center mt-3 sm:mt-4">
-          <span className="text-primary font-bold text-base sm:text-lg">
+          <span className="text-emerald-600 font-bold text-base sm:text-lg">
             ${prod.price}
           </span>
 
           <button
-            className="btn btn-info btn-sm sm:btn-md text-white rounded-full px-4 sm:px-5"
+            className="btn btn-sm sm:btn-md rounded-full px-4 sm:px-5 border-0 bg-sky-700 text-white hover:bg-sky-800"
             onClick={() => navigate(`/product/${prod.id}`)}
           >
             Ver más
