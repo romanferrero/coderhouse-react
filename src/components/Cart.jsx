@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate} from 'react-router-dom'
 import { useCart } from '../context/CartContext'
 
 function Cart() {
@@ -11,6 +11,8 @@ function Cart() {
     totalItems,
     totalPrice
   } = useCart()
+
+  const navigate = useNavigate()
 
   if (cartItems.length === 0) {
     return (
@@ -97,7 +99,12 @@ function Cart() {
             </p>
           </div>
 
-          <button className="btn btn-primary mt-5 w-full rounded-full">Finalizar compra</button>
+          <button
+            onClick={() => navigate('/checkout')}
+            className="btn btn-primary mt-5 w-full rounded-full"
+          >
+            Finalizar compra
+          </button>
           <button
             onClick={clearCart}
             className="btn btn-ghost mt-2 w-full rounded-full"

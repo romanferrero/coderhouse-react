@@ -6,6 +6,7 @@ import ItemDetailContainer from '../components/ItemDetailContainer'
 import Footer from '../components/Footer'
 import Cart from '../components/Cart'
 import ScrollToTop from '../components/ScrollToTop'
+import Checkout from '../components/Checkout'
 
 
 
@@ -22,6 +23,7 @@ function AppRouter () {
             <Route path="/product/:id" element={<ItemDetailContainer />} />
             <Route path="/shop-guide" element={<ShopGuide />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout />} />
           </Routes>
         </main>
         <Footer />
