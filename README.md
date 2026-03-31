@@ -1,16 +1,75 @@
-# React + Vite
+# 🌊 Ruta del Surf - E-commerce (React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📌 Descripción
 
-Currently, two official plugins are available:
+Este proyecto consiste en el desarrollo de una aplicación **e-commerce** utilizando **React JS**, realizada como trabajo final del curso de React JS en Coderhouse.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+La aplicación funciona como una **Single Page Application (SPA)**, permitiendo a los usuarios navegar entre distintas secciones sin recargar la página, explorar productos, ver detalles, gestionar un carrito de compras y simular una compra.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🎯 Objetivos del proyecto
 
-## Expanding the ESLint configuration
+- Aplicar los conceptos fundamentales de React en un caso real.
+- Diseñar la arquitectura de un e-commerce moderno.
+- Implementar navegación dinámica mediante React Router.
+- Gestionar estado local y global utilizando Hooks y Context API.
+- Simular la integración con una base de datos (Firebase Firestore).
+- Resolver distintos escenarios de renderizado condicional.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## ⚙️ Tecnologías utilizadas
+
+- React JS
+- React Router DOM
+- Context API
+- Tailwind CSS + DaisyUI
+- Firebase Firestore (conceptual)
+- JavaScript (ES6+)
+
+---
+
+## 🧩 Arquitectura de la aplicación
+
+La aplicación está construida bajo una arquitectura basada en **componentes reutilizables**, lo que permite una estructura modular, escalable y mantenible.
+
+---
+
+## 🌐 Navegación (SPA)
+
+La navegación se gestiona mediante React Router, evitando recargas de página.
+
+---
+
+## 🧠 Gestión del estado
+
+### Estado local (Hooks)
+
+Se utilizan hooks como:
+- useState
+- useEffect
+
+Para:
+- manejo de datos  
+- control de renderizado  
+- efectos secundarios  
+
+---
+
+### 🌍 Estado global (Context API)
+
+El estado del carrito se gestiona mediante un CartContext.
+
+---
+
+## 🔥 Consumo de datos (Firebase - conceptual)
+
+Los productos se obtienen conceptualmente desde Firebase Firestore.
+
+---
+
+## 👨‍💻 Autor
+
+Proyecto desarrollado por Román Ferrero  
+Curso: React JS - Coderhouse
