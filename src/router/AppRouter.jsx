@@ -12,7 +12,7 @@ import Checkout from '../components/Checkout'
 
 function AppRouter () {
   return (
-    <BrowserRouter basename="coderhouse-react">
+    <BrowserRouter basename="/coderhouse-react/">
       <ScrollToTop />
       <div className="app-shell">
         <NavbarContainer />
