@@ -5,7 +5,9 @@ import {
     query,
     where,
     doc,
-    getDoc
+    getDoc,
+    addDoc,
+    Timestamp,
 }
     from "firebase/firestore"
 
@@ -57,4 +59,23 @@ export const getDetail = async (id) => {
     // docSnap.data() will be undefined in this case
     console.log("No such document!")
   }
+}
+
+export const createOrder = async ({ buyer, cartItems, totalPrice }) => {
+    const order = {
+        buyer,
+        items: cartItems.map(item => ({
+            id: item.id,
+            title: item.title,
+            price: item.price,
+            quantity: item.quantity,
+        })),
+        total: totalPrice,
+        date: Timestamp.fromDate(new Date()),
+    }
+
+    const ordersRef = collection(db, "orders")
+    const docRef = await addDoc(ordersRef, order)
+
+    return docRef.id
 }

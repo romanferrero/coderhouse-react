@@ -1,7 +1,6 @@
 import { useState } from 'react'
-import { collection, addDoc, Timestamp } from 'firebase/firestore'
 import { Link } from 'react-router-dom'
-import { db } from '../firebase/db'
+import { createOrder } from '../firebase/db'
 import { useCart } from '../context/CartContext'
 
 function Checkout() {
@@ -21,22 +20,9 @@ function Checkout() {
         if (!canSubmit) return
         setLoading(true)
 
-        const order = {
-            buyer,
-            items: cartItems.map(item => ({
-                id: item.id,
-                title: item.title,
-                price: item.price,
-                quantity: item.quantity,
-            })),
-            total: totalPrice,
-            date: Timestamp.fromDate(new Date()),
-        }
-
         try {
-            const ordersRef = collection(db, 'orders')
-            const docRef = await addDoc(ordersRef, order)
-            setOrderId(docRef.id)
+            const newOrderId = await createOrder({ buyer, cartItems, totalPrice })
+            setOrderId(newOrderId)
             clearCart()
         } catch (error) {
             console.error('Error al crear la orden:', error)
