@@ -1,5 +1,6 @@
 import AppRouter from './router/AppRouter'
 import { CartProvider } from './context/CartContext'
+import CartToast from './components/CartToast'
 
 function App() {
 
@@ -7,6 +8,7 @@ function App() {
     <CartProvider>
       <div>
         <AppRouter />
+        <CartToast />
       </div>
     </CartProvider>
   )

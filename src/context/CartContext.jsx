@@ -1,9 +1,20 @@
-import { createContext, useContext, useMemo, useState } from 'react'
+import { createContext, useContext, useEffect, useMemo, useState } from 'react'
 
 const CartContext = createContext(null)
 
 export function CartProvider({ children }) {
   const [cartItems, setCartItems] = useState([])
+  const [cartNotice, setCartNotice] = useState(null)
+
+  useEffect(() => {
+    if (!cartNotice) return
+
+    const timeoutId = setTimeout(() => {
+      setCartNotice(null)
+    }, 2400)
+
+    return () => clearTimeout(timeoutId)
+  }, [cartNotice])
 
   const addToCart = (product, quantity = 1) => {
     const safeQty = Math.max(1, Number(quantity) || 1)
@@ -21,6 +32,16 @@ export function CartProvider({ children }) {
 
       return [...prevItems, { ...product, quantity: safeQty }]
     })
+
+    setCartNotice({
+      id: Date.now(),
+      message: `${safeQty} ${safeQty === 1 ? 'item agregado' : 'items agregados'} al carrito`,
+      productTitle: product.title
+    })
+  }
+
+  const clearCartNotice = () => {
+    setCartNotice(null)
   }
 
   const removeFromCart = (productId) => {
@@ -58,7 +79,9 @@ export function CartProvider({ children }) {
     decrementItem,
     clearCart,
     totalItems,
-    totalPrice
+    totalPrice,
+    cartNotice,
+    clearCartNotice
   }
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>
