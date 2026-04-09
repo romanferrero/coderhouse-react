@@ -1,5 +1,6 @@
 import { Link, useNavigate} from 'react-router-dom'
 import { useCart } from '../context/CartContext'
+import ItemCount from './ItemCount'
 
 function Cart() {
   const {
@@ -54,23 +55,15 @@ function Cart() {
                   </div>
                 </div>
 
-                <div className="flex items-center gap-2">
-                  <button
-                    onClick={() => decrementItem(item.id)}
-                    className="btn btn-sm btn-outline"
-                    aria-label={`Restar una unidad de ${item.title}`}
-                  >
-                    -
-                  </button>
-                  <span className="min-w-8 text-center text-sm font-semibold">{item.quantity}</span>
-                  <button
-                    onClick={() => addToCart(item, 1)}
-                    className="btn btn-sm btn-outline"
-                    aria-label={`Sumar una unidad de ${item.title}`}
-                  >
-                    +
-                  </button>
-                </div>
+                <ItemCount
+                  value={item.quantity}
+                  onDecrement={() => decrementItem(item.id)}
+                  onIncrement={() => addToCart(item, 1)}
+                  buttonClassName="btn-sm btn-outline"
+                  valueClassName="btn-sm btn-ghost"
+                  ariaLabelDecrement={`Restar una unidad de ${item.title}`}
+                  ariaLabelIncrement={`Sumar una unidad de ${item.title}`}
+                />
 
                 <div className="flex items-center justify-between gap-4 md:justify-end">
                   <p className="font-semibold">${item.price * item.quantity}</p>

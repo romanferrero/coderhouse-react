@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useCart } from '../context/CartContext'
+import ItemCount from './ItemCount'
 
 function ItemDetail({ item }) {
   const [quantity, setQuantity] = useState(1)
@@ -39,23 +40,13 @@ function ItemDetail({ item }) {
           </div>
 
           <div className="mt-8 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3">
-            <div className="join">
-              <button
-                className="btn join-item btn-outline"
-                onClick={() => setQuantity((prev) => Math.max(1, prev - 1))}
-              >
-                -
-              </button>
-              <span className="btn join-item btn-ghost pointer-events-none">
-                {quantity}
-              </span>
-              <button
-                className="btn join-item btn-outline"
-                onClick={() => setQuantity((prev) => prev + 1)}
-              >
-                +
-              </button>
-            </div>
+            <ItemCount
+              value={quantity}
+              onDecrement={() => setQuantity((prev) => Math.max(1, prev - 1))}
+              onIncrement={() => setQuantity((prev) => prev + 1)}
+              ariaLabelDecrement={`Restar una unidad de ${item.title}`}
+              ariaLabelIncrement={`Sumar una unidad de ${item.title}`}
+            />
 
             <button className="btn rounded-full px-6 sm:px-8 w-full sm:w-auto border-0 bg-sky-700 text-white hover:bg-sky-800" onClick={handleAddToCart}>
               Agregar al carrito
